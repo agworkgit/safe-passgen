@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-grey: #222222;
+  --dark-grey: rgb(48, 48, 48);
+  --grey: #aeaeae;
+  --red: #f64a4a;
+  --orange: #fb7c58;
+  --yellow: #f8cd65;
+  --neon-green: #02dc4a;
+  --almost-white: #e6e5ea;
+}
+
+/* Main Styles */
+
+body {
+  background-color: var(--very-dark-grey);
+  font-family: "DM Mono", monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
+}
+
+/* Header */
+header {
+  color: var(--grey);
+  font-size: clamp(1.75rem, 0.8rem + 1vw, 2.5rem);
+  margin-bottom: 1.4rem;
+}
+
+/* Form Control */
+.form-control {
+  background-color: var(--dark-grey);
+  color: var(--almost-white);
+  padding: 10px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.length-label {
+  color: var(--neon-green);
+  font-size: clamp(2rem, 2.4rem + 1vw, 3rem);
+}
+
+.character-field {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 2.1%;
+  align-items: center;
+}
+
+/* Track */
+input[type="range"] {
+  /*  styling the track  */
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--very-dark-grey);
+  width: 85vw;
+  cursor: pointer;
+  outline: none;
+  height: 8px;
+  background: var(--very-dark-grey);
+}
+
+/* Thumb */
+/* Thumb: Google Chrome */
+input[type="range"]::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+
+  background-color: var(--almost-white);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  transition: 0.2s ease-in-out;
+  transform: translate(-15px, 15px, 0px, 0px);
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 28px;
+  width: 28px;
+  background-color: var(--almost-white);
+  border-radius: 50%;
+  border: none;
+  transform: translate(-15px, 15px, 0px, 0px);
+}
+
+/* Hover, active & focus Thumb: Webkit */
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: var(--very-dark-grey);
+  border: 1px solid var(--neon-green);
+}
+input[type="range"]:active::-webkit-slider-thumb {
+  background-color: var(--very-dark-grey);
+  border: 1px solid var(--neon-green);
+}
+
+/* Hover, active & focus Thumb: Firfox */
+
+input[type="range"]::-moz-range-thumb:hover {
+  background-color: var(--very-dark-grey);
+  border: 1px solid var(--neon-green);
+}
+input[type="range"]:active::-moz-range-thumb {
+  background-color: var(--very-dark-grey);
+  border: 1px solid var(--neon-green);
+}
+input[type="range"]:focus::-moz-range-thumb {
+  background-color: var(--very-dark-grey);
+  border: 1px solid var(--neon-green);
+}
+
+/* Checkbox Main Styling */
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: clamp(0.5rem, 0.8rem + 1vw, 1rem);
+}
+
+/* Checkboxes tick styling */
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--almost-white);
+}
+
+input[type="checkbox"]:checked + label::before {
+  border: none;
+}
+
+input[type="checkbox"]:hover + label::before {
+  border: 1px solid var(--neon-green);
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: url(/assets/images/icon-check.svg) no-repeat center;
+  background-color: var(--neon-green);
+  border: 1px solid var(--neon-green);
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: start;
+  margin-inline: 1.2vw;
+}
+
+/* Password Strength */
+
+.password-strength {
+  background-color: rgb(100, 100, 100);
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 85vw;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.password-strength p {
+  color: var(--grey);
+  font-size: clamp(0.5rem, 0.8rem + 1vw, 1rem);
+  padding-left: 1.25rem;
+}
+
+.strength-state {
+  display: flex;
+  padding-right: 1.25rem;
+  font-size: clamp(0.5rem, 0.8rem + 1vw, 0.75rem);
+}
+
+.column {
+  border: 1px solid var(--almost-white);
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  background-color: var(--very-dark-grey);
+}
+
+/* Dynamic Styles for Strength State */
+.too-weak {
+  background-color: var(--red);
+}
+
+.weak {
+  background-color: var(--orange);
+}
+
+.medium {
+  background-color: yellow;
+}
+
+.strong {
+  background-color: var(--neon-green);
+}
+
+/* Generate Button */
+
+button[type="submit"] {
+  padding: 20px;
+  margin: 10px auto;
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--neon-green);
+  color: var(--dark-grey);
+  border: 1px solid var(--neon-green);
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 85vw;
+}
+
+button[type="submit"] img {
+  padding-left: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--dark-grey);
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+}
+
+button[type="submit"]:active {
+  background-color: var(--dark-grey);
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  transform: scale(0.98);
+}
+
+button[type="submit"]:hover img {
+  filter: opacity(0.5) drop-shadow(0 0 var(--neon-green)) brightness(2);
+}
+
+/* Password Field */
+.container {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.password-field {
+  background-color: var(--dark-grey);
+  color: var(--almost-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 90vw;
+  margin: 1vh auto;
+  align-content: center;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+  position: relative;
+  word-break: break-word;
+}
+
+.password-field h1 {
+  opacity: 0.2;
+  width: 70%;
+  text-align: left;
+  overflow: hidden;
+  font-size: clamp(1.5rem, 0.8rem + 1vw, 2rem);
+  margin-left: 1%;
+}
+
+.password-field img {
+  cursor: pointer;
+  transform: scale(0.8);
+}
+
+.password-field p {
+  position: absolute;
+  color: var(--neon-green);
+  right: 13%;
+  text-transform: uppercase;
+  display: none;
+  font-size: clamp(0.5rem, 0.8rem + 1vw, 1rem);
+}
+
+/* Toggle Password Opacity */
+.toggleOpacity {
+  opacity: 1 !important;
+}
+
+.password-field img:hover {
+  filter: invert(0.5) brightness(2);
+}
+
+/* Media Query */
+
+@media screen and (max-width: 400px) {
+  .form-control {
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  .password-field {
+    width: 100vw;
+    margin: 1vh auto;
+  }
+
+  .checkbox-group {
+    margin-inline: -2vw;
+  }
+
+  input[type="range"] {
+    /*  styling the track  */
+    width: 90vw;
+  }
+
+  button[type="submit"] {
+    width: 90vw;
+  }
+
+  .password-strength {
+    width: 90vw;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .form-control {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .password-field {
+    width: 90vw;
+    margin: 1vh auto;
+  }
+
+  .checkbox-group {
+    margin-inline: 1vw;
+  }
+
+  input[type="range"] {
+    /*  styling the track  */
+    width: 82vw;
+  }
+
+  button[type="submit"] {
+    width: 82vw;
+  }
+
+  .password-strength {
+    width: 82vw;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .form-control {
+    width: 50vw;
+    margin: 0 auto;
+  }
+
+  .password-field {
+    width: 50vw;
+    margin: 1vh auto;
+  }
+
+  .password-field img {
+    margin-right: 20px;
+  }
+
+  .checkbox-group {
+    margin-inline: 0.6vw;
+  }
+
+  input[type="range"] {
+    /*  styling the track  */
+    width: 45vw;
+  }
+
+  button[type="submit"] {
+    width: 45vw;
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"]:active {
+    transform: scale(0.99);
+  }
+
+  .password-strength {
+    width: 45vw;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .form-control {
+    width: 50vw;
+    margin: 0 auto;
+  }
+
+  .password-field {
+    width: 50vw;
+    margin: 1vh auto;
+  }
+
+  .password-field img {
+    margin-right: 20px;
+  }
+
+  .checkbox-group {
+    margin-inline: 0.25vw;
+  }
+
+  input[type="range"] {
+    /*  styling the track  */
+    width: 47vw;
+  }
+
+  button[type="submit"] {
+    width: 47vw;
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"]:active {
+    transform: scale(0.99);
+  }
+
+  .password-strength {
+    width: 47vw;
+    margin-bottom: 10px;
+  }
+}
