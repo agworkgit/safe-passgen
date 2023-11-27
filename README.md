@@ -1,4 +1,4 @@
-## Lead Tracker Extension for Chrome
+## Random Password Generator
 
 ### Description
 
@@ -43,7 +43,7 @@ The following image shows the web application's appearance and functionality:
 
 > **Note**: This layout is designed to be responsive.
 
-The following link will take you to the deployed webpage <https://agworkgit.github.io/random-password-generator/>
+The following link will take you to the deployed webpage <https://agworkgit.github.io/safe-passgen/>
 
 Once generated, the password can be copied by pressing the icon next to it.
 
