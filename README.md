@@ -1,4 +1,4 @@
-## Lead Tracker Extension for Chrome
+## Random Password Generator
 
 ### Description
 
